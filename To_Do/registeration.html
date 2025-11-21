@@ -1,0 +1,41 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>To Do - Registeration</title>
+    <link rel="stylesheet" href="./style/register.css">
+</head>
+<body>
+    <div class="shape"></div>
+    <div class="shape"></div>
+    <div class="shape"></div>
+    <div class="shape"></div>
+    <section>
+        <h1>Register</h1>
+        <form>
+            <div>
+                <label for="name">Name*</label>
+                <input type="text" name="name" id="name" required>
+            </div>
+            <div>
+                <label for="username">Username*</label>
+                <input type="text" name="username" id="username" required>
+            </div>
+            <div>
+                <label for="password">Password*</label>
+                <input type="password" name="password" id="password" required>
+            </div>
+            <div>
+                <label for="confirm_password">Confirm Password*</label>
+                <input type="password" name="confirm_password" id="confirm_password" required>
+            </div>
+            <span>
+                 Already a User? <a href="./login.html">Click to Login</a>
+            </span>
+            <button class="login_btn" type="submit">Register</button>
+        </form>
+    </section>
+    <script src="./script/register.js" type="module"></script>
+</body>
+</html>
