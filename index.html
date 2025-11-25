@@ -7,6 +7,57 @@
     <link rel="stylesheet" href="./To_Do/style/style.css">
 </head>
 <body>
-    <script src="./script/script.js"></script> 
+    <header>
+        <div>
+            To-do Application
+        </div>
+
+        <div>
+            <!--Welcome text will display here-->
+            <span>Welcome,</span>
+            <span id="username">User</span>
+        </div>
+        <nav>
+            <button type="button" id="logout_btn">Logout</button>
+        </nav>
+    </header>
+    <main class="board" id="todoboard"></main>
+
+    <!--modal form-->
+    <div id="addModal" class="modal hidden">
+        <form class="modal-content">
+            <span id="close_btn">X</span>
+            <h2>Add New Task</h2>
+            <div>
+                <label for="Title">Title*</label>
+                <input type="text" id="Title" name="title" placeholder="Task Title">
+            </div>
+            <div>
+                <label for="description">Description*</label>
+                <textarea name="description" id="description" rows="4" cols="20"
+                    placeholder="Task description"></textarea>
+            </div>
+            <div>
+                <label for="priority">Priority*</label>
+                <select name="priority" id="priority">
+                    <option value="P1">Critical</option>
+                    <option value="P2">High</option>
+                    <option value="P3">Moderate</option>
+                    <option value="P4">Low</option>
+                </select>
+            </div>
+            <div>
+                <label for="deadline">Deadline*</label>
+                <input type="datetime-local" id="deadline" name="title" placeholder="Task Title">
+            </div>
+            <button type="submit">Add Task</button>
+        </form>
+         </div>
+
+    <footer>
+        Copyright by SK
+    </footer>
+    </div>
+    <script src="./To_Do/script/script.js"></script> 
 </body>
 </html>
