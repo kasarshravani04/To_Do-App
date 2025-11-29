@@ -3,7 +3,7 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>To_Do App</title>
+    <title>To Do App</title>
     <link rel="stylesheet" href="./To_Do/style/style.css">
 </head>
 <body>
@@ -18,13 +18,36 @@
             <span id="username">User</span>
         </div>
         <nav>
+            <button type="button" id="add_todo_btn">
+                Add todo
+            </button>
             <button type="button" id="logout_btn">Logout</button>
         </nav>
     </header>
-    <main class="board" id="todoboard"></main>
+    <main class="board">
+        <section class="filter_section">
+            <select name="priority_filter" id="priority_filter">
+                <option value="">All Priorities</option>
+                <option value="P1">Critical</option>
+                <option value="P2">High</option>
+                <option value="P3">Medium</option>
+                <option value="P4">Low</option>
+            </select>
+        <select id="status_filter">
+              <option value="">All</option>
+              <option value="Completed">Completed</option>
+              <option value="Pending">Pending</option>
+        </select>
+
+        <input type="search" placeholder="Search Title" id="search_filter">
+        </section>
+        <section id="todoboard">
+            <!--add template layout / copy paste-->
+        </section>
+    </main>
 
     <!--modal form-->
-    <div id="addModal" class="modal hidden">
+    <dialog id="addModal" class="modal ">
         <form class="modal-content">
             <span id="close_btn">X</span>
             <h2>Add New Task</h2>
@@ -52,12 +75,71 @@
             </div>
             <button type="submit">Add Task</button>
         </form>
-         </div>
+    </dialog>
+    <template id="todo_card">
+        <div class="todo_card_container">
+            <h4>
+                <!--title-->
+            </h4>
+            <span>
+                <!--date and time-->
+            </span>
+            <label for="complete_label">
+                <input type="checkbox" class="complete_checkbox">
+            </label>
+            <button id="edit_button">Edit</button>
+            <button type="button" class="del_todo">
+                <svg width="800px" height="800px" viewBox="0 0 24 24" fill="transparent"
+                    xmlns="http://www.w3.org/2000/svg">
+                    <path d="M3 6.98996C8.81444 4.87965 15.1856 4.87965 21 6.98996" stroke="#000000" stroke-width="1.5"
+                        stroke-linecap="round" stroke-linejoin="round" />
+                    <path
+                        d="M8.00977 5.71997C8.00977 4.6591 8.43119 3.64175 9.18134 2.8916C9.93148 2.14146 10.9489 1.71997 12.0098 1.71997C13.0706 1.71997 14.0881 2.14146 14.8382 2.8916C15.5883 3.64175 16.0098 4.6591 16.0098 5.71997"
+                        stroke="#000000" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round" />
+                    <path d="M12 13V18" stroke="#000000" stroke-width="1.5" stroke-linecap="round"
+                        stroke-linejoin="round" />
+                    <path
+                        d="M19 9.98999L18.33 17.99C18.2225 19.071 17.7225 20.0751 16.9246 20.8123C16.1266 21.5494 15.0861 21.9684 14 21.99H10C8.91389 21.9684 7.87336 21.5494 7.07541 20.8123C6.27745 20.0751 5.77745 19.071 5.67001 17.99L5 9.98999"
+                        stroke="#000000" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round" />
+                </svg>  
+            </button>
+        </div>
+    </template>
 
+    <!--edit modal-->
+    <dialog id="edit_modal" class="modal">
+        <form class="modal-content" id="edit_todo_form">
+            <span id="btn-close">X</span>
+            <h2>Edit Task</h2>
+            <div>
+                <label for="edit_title">Title*</label>
+                <input type="text" id="edit_title" name="edit_title" placeholder="Task Title" required>
+            </div>
+            <div>
+                <label for="edit_description">Description*</label>
+                <textarea name="edit_description" id="edit_description" rows="4" cols="20"
+                     placeholder="Task description" required></textarea>
+            </div>
+            <div>
+                <label for="edit_priority">Priority*</label>
+                <select name="edit_priority" id="edit_priority" required>
+                    <option value="P1">Critical</option>
+                    <option value="P2">High</option>
+                    <option value="P3">Moderate</option>
+                    <option value="P4">Low</option>
+                </select>
+            </div>
+            <div>
+                <label for="edit_deadline">Deadline*</label>
+                <input type="datetime-local" id="edit_deadline" name="edit_deadline" max="2026-12-31T00:00">
+            </div>
+            <button type="submit">Edit Task</button>
+        </form>
+    </dialog>
     <footer>
         Copyright by SK
     </footer>
     </div>
-    <script src="./To_Do/script/script.js"></script> 
+    <script src="./To_Do/script/script.js" type="module"></script> 
 </body>
 </html>
