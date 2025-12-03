@@ -3,7 +3,7 @@ import Todo from "./Todo.js";
 
 const user_name = localStorage.getItem("name") || "";
 function DataUpdate(){
-
+ return JSON.parse(localStorage.getItem("user_list")) || []
 }
 
 let user_list = DataUpdate();

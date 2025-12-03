@@ -7,7 +7,7 @@
     <link rel="stylesheet" href="./To_Do/style/style.css">
 </head>
 <body>
-    <header>
+    <header class="main_header">
         <div>
             To-do Application
         </div>
@@ -48,7 +48,7 @@
 
     <!--modal form-->
     <dialog id="addModal" class="modal ">
-        <form class="modal-content">
+        <form class="modal-content" id="add_todo_form">
             <span id="close_btn">X</span>
             <h2>Add New Task</h2>
             <div>
@@ -63,7 +63,7 @@
             <div>
                 <label for="priority">Priority*</label> 
                 <select  id="priority"  name="priority">
-                  <option value="" selected disabled hidden>Please select an option</option> 
+                  <option value="" selected disabled hidden>Select</option> 
                   <option value="P1">Critical</option>
                   <option value="P2">High</option> 
                   <option value="P3">Moderate</option> 
@@ -111,7 +111,7 @@
     <!--edit modal-->
     <dialog id="edit_modal" class="modal">
         <form class="modal-content" id="edit_todo_form">
-            <span id="btn-close">X</span>
+            <span id="btn_close">X</span>
             <h2>Edit Task</h2>
             <div>
                 <label for="edit_title">Title*</label>

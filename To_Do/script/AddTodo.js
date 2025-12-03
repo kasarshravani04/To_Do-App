@@ -4,7 +4,7 @@ const add_todo = (event,todoList) =>{
     event.preventDefault();
     const Title = document
        .getElementById("Title")
-       .ariaValueMax.trim()
+       .value.trim()
        .toLowerCase();
        const description =
            document.getElementById("description").value;
@@ -17,8 +17,6 @@ const add_todo = (event,todoList) =>{
           (todo) => todo.title === Title
        );
        
-       //only the future date/ or future time is allowed
-       let current_date = new Date();
 
        if(todo_found){
         alert("todo already added");
