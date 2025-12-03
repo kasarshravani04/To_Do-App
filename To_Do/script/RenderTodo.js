@@ -5,18 +5,19 @@ import{
 } from "./crudOperation.js";
 
 function renderTodo(todoList){
+    console.log(todoList)
     const todo_container =
         document.getElementById("todoboard");
     const todo_card = document.getElementById("todo_card");
-
     if (todoList.length > 0){
         todo_container.innerHTML = "";
 
         todoList.forEach((todo) =>{
-         const clone = todo_card.contentEditable.cloneNode(true);
+
+         const clone = todo_card.content.cloneNode(true);
 
          const title = clone.querySelector("h4");
-         
+         console.log(title)
          title.innerText = todo.title;
          const deadline = clone.querySelector("span");
          deadline.innerText = todo.deadline;
