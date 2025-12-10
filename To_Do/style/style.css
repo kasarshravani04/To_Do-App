@@ -7,7 +7,7 @@
 }
 
 body {
-    background: linear-gradient(135 deg, #0a192f 0%, #112240 100%);
+    background: linear-gradient(135deg, #0a192f 0%, #112240 100%);
     color: #e6f1ff;
     min-height: 100vh;
     overflow-x: hidden;
@@ -135,6 +135,7 @@ nav {
 
 /* Todo Board - Gaming Grid Layout */
 #todoboard {
+    background-color: #0a192f;
     display: grid;
     grid-template-columns: repeat(auto-fill, minmax(320px, 1fr));
     gap: 1.8rem;
@@ -369,11 +370,11 @@ nav {
 footer {
     text-align: center;
     padding: 2rem;
-    color: #8892b0;
+    color: #a9b1c8;
     font-size: 0.9rem;
     border-top: 1px solid #233554;
     margin-top: 3rem;
-    background: rgba(17, 34, 64, 0.5);
+    background-color: rgba(17, 34, 64, 0.5);
 }
 
 /* Responsive */
