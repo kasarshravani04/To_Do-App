@@ -28,6 +28,15 @@ function applyFilters(User_details) {
     );
   }
 
+  if (search_filter.value.trim() !== ""){
+    const keyword = search_filter.value
+    .trim()
+    .toLowerCase();
+    filtered = filtered.filter((todo) =>
+        todo.title.toLowerCase().includes(keyword)
+    );
+  }
+
   renderTodo(filtered);
 }
 
