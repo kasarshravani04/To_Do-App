@@ -97,4 +97,7 @@ document.addEventListener("DOMContentLoaded", () => {
   status_filter.addEventListener("change", () =>
     applyFilters(User_details.todoList)
   );
+  search_filter.addEventListener("input" , () =>
+  applyFilters(User_details.todoList)
+  );
 });

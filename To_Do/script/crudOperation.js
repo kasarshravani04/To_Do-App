@@ -3,7 +3,9 @@ import Todo from "./Todo.js";
 
 const user_name = localStorage.getItem("name") || "";
 function DataUpdate(){
- return JSON.parse(localStorage.getItem("user_list")) || []
+  const user_list = 
+      JSON.parse(localStorage.getItem("user_list")) || [];
+      return user_list;
 }
 
 let user_list = DataUpdate();
@@ -43,8 +45,9 @@ const btn_close = document.getElementById("btn_close");
 btn_close.addEventListener("click", close_btn_func);
 
 function close_btn_func(){
-    editModal.closest();
+    editModal.close();
 }
+
 // calling form inputs
 
 const Title = document.getElementById("edit_title");
@@ -63,7 +66,7 @@ export const editTodo = (todo) => {
   editModal.showModal();
 };
 
-//  svae edit form data
+//  save edit form data
 edit_todo_form.addEventListener("submit", (e) => {
   e.preventDefault();
   const editedTodo = new Todo(
